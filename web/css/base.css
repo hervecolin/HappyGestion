@@ -1,0 +1,115 @@
+header, footer{
+	width: 100%;
+	min-height: 100px;
+	background: grey;
+	color : white;
+	font-size: 1.5em;
+}
+nav{
+	width: 25%;
+	min-height: 550px;
+	border: 1px solid navy;
+	
+}
+article{
+	width: 65%;
+	min-height: 550px;
+	border: 1px solid navy;
+	float: right;
+	vertical-align: top;
+}
+nav, article{
+	display: inline-block;
+	
+}
+.main{
+	cursor: pointer;
+	
+}
+h1{
+	color:teal;
+}
+.m5{margin : 5px auto;}
+.m20{margin : 20px auto;}
+.m30{margin : 30px auto;}
+.p5{padding:5px;}
+.p10{padding:10px;}
+
+.navy{
+	background: silver;
+	color: white;
+}
+.white{
+	background: white;
+	color: navy;
+	
+}
+.border{
+	border: 2px solid navy;
+}
+.radius{
+	border-radius: 5px;
+}
+.h550{
+	min-height: 550px;
+}
+.h240{
+	min-height: 240px;
+}
+.h70{
+	min-height: 70px;
+}
+.w100{width: 100%;}
+.w80{width: 80%;}
+.w60{width: 60%;}
+.w30{width: 30%;}
+.w20{width: 20%;}
+.w15{ width:15%;}
+.w05{width: 5%;}
+
+table{
+	border-collapse: collapse;
+	
+}
+td, tr, th{
+	border: 1px solid black;
+	padding: auto 5px;
+	
+}
+.left{
+	text-align: left;
+	
+}
+
+.right{
+	text-align: right;
+}
+.center{
+	
+	text-align: center;
+}
+.blue{           
+	color:blue;
+}
+.framb{
+	background-color:#ffb3c6;	
+}
+.yel{
+background-color:#ffbf80;
+}
+.puce{
+	list-style:none;
+}
+body{
+	/*background-image:url(../web/img/bussiness.jpg);*/
+	background-color:#e6f9ff;
+}
+.fer{
+	background-color:#d4d4aa;
+}
+.blue{
+	color:blue
+}
+.teal{
+	background:teal;
+}

@@ -1,0 +1,17 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Création des Hierarchies</h1>
+		<div class="teal w60">
+
+			{{ form(form) }}
+
+			<ul class="record_actions">
+				<li>
+					<a href="{{ path('hierarchie') }}">
+						Retour à la liste
+					</a>
+				</li>
+			</ul>
+		</div>
+{% endblock %}

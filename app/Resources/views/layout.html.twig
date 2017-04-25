@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+		   <link rel="stylesheet" href="{{asset('Bootstrap/css/bootstrap.min.css')}}" type="text/css" />
+		   <link rel="stylesheet" href="{{asset('css/layout_01.css')}}" type="text/css" />
+		{% endblock %}
+    </head>
+    <body>
+		<header class="container-fluid">
+			<div class="row navy h70 blue">
+				<div class="col-md-4 p10"><img src="{{asset('img/imie.png')}}" alt="LOGO"  width="30%"/></div>
+				<div class="col-md-8  right m20">
+					<span class="glyphicon glyphicon-envelope main"><a href="https://twitter.com/EcoleIMIE?ref_src=twsrc%5Etfw&ref_url=http%3A%2F%2Fimie-ecole-informatique.fr%2Fcampus%2Fnantes.html"/> Contact </a></span>
+					<h1 class="left" >Connecting people by happy & free !</h1>
+				</div>
+			</div>
+		</header>
+		<div class="container-fluid">
+			<div class="row white h550 ">
+				<nav class="col-md-2 h550  fer">
+					<a href="{{path('imie_homepage',{'name':'Herve COLIN'})}}" class="btn btn-primary w100 m5">Hello</a>
+					<a href="{{path('imie_tableau')}}" class="btn btn-primary w100 m5">Tableau</a>
+					<a href="{{path('article')}}" class="btn btn-primary w100 m5">Liste Article CRUD</a>
+					<a href="{{path('imie_list_article')}}" class="btn btn-primary w100 m5">Liste Article</a>
+					<a href="{{path('user')}}" class="btn btn-primary w100 m5">Ajouter un utilisateur</a>
+					{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+						<h3>Connecté  en tant que {{ app.user.username }}</h3>
+						<h3><a href="{{path('logout')}}">Déconnexion </a></h3><br/>
+						{#<a href="{{ path('fos_user_change_password') }}">Changement Password</a>#}
+					{% else %}	
+						<h3><a href="{{path('user_login')}}">Connexion </a></h3><br/>
+						{#<a href="{{ path('fos_user_registration_register') }}"  class="btn" >Inscription</a>#}
+					{% endif %}	
+					{% if(is_granted("ROLE_ADMIN")) %}
+						<h1>Pour Role ADMIN</h1>
+					{% endif %}
+					{% if(is_granted("ROLE_USER")) %}
+						<h1>Pour Role USER</h1>
+					{% endif %}					
+					
+					{% if(is_granted("ROLE_IMIE")) %}
+						<h1>Pour Role IMIE</h1>
+					{% endif %}					
+					
+					{{render_esi(controller("IMIEBundle:Default:arrivage"))}}
+				</nav>
+				<article class="col-md-10 h550">
+						{% block body %}{% endblock %}		
+				</article>
+			</div>
+		</div>	
+		<footer class="container-fluid">
+			<div class="row h70 navy">
+				<div class="col-md-4">
+					<iframe class="m30" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5415.465291238731!2d-1.583136!3d47.260931!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4805edc012222d37%3A0xd136a072b7f040a6!2s213+Route+de+Rennes%2C+44700+Orvault%2C+France!5e0!3m2!1sfr!2sfr!4v1490891296377"  width="320" height="240"></iframe>				
+				</div>
+				<div class="col-md-4 h240 ">
+					<h2 >Pourquoi l'utiliser ?</h2>
+					<p>
+					On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour 'Lorem Ipsum' vous conduira vers de nombreux sites qui n'en sont encore qu'à leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d'y rajouter de petits clins d'oeil, voire des phrases embarassantes).
+					</p>
+				
+				</div>
+				<div class="col-md-4 h240">
+					<h2>Pourquoi les droits d'auteur et le copyRight ?</h2>
+					<p>
+					Coactique aliquotiens nostri pedites ad eos persequendos scandere clivos sublimes etiam si lapsantibus plantis fruticeta prensando vel dumos ad vertices venerint summos, 
+					inter arta tamen et invia nullas acies explicare permissi nec firmare nisu valido gressus: hoste discursatore rupium abscisa volvente, 
+					ruinis ponderum inmanium consternuntur, 
+					aut ex necessitate ultima fortiter dimicante, superati periculose per prona discedunt.
+					</p>				
+				</div>
+			</div>
+		</footer>
+       
+        {% block javascripts %}
+			<script src="{{asset('JQuery/jQuery.js')}}" type="text/javascript" ></script>
+			<script src="{{asset('Bootstrap/js/bootstrap.min.js')}}" type="text/javascript" ></script>
+			
+		
+		{% endblock %}
+    </body>
+</html>

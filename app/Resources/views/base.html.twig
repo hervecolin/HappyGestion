@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+		   <link rel="stylesheet" href="{{asset('css/base.css')}}" type="text/css" />
+		{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+		<header>
+			<h2> Bienvenue sur mon interface H.COLIN connecting Users...  Ou comment apprendre Symfony en sept jours mdr !</h2>
+		</header>
+		
+		<nav class="teal w15 radius">
+			<h1><a href="{{path('imie_homepage',{'name':'H.COLIN'})}}">Hello</a></h1>
+			<h1><a href="{{path('imie_tableau')}}">Tableau</a></h1>
+			<h1><a href="{{path('article')}}">Liste Article</a></h1>
+			<h1><a href="{{path('hierarchie')}}" class="btn btn-primary w100 m5">Liste des hierarchies utilisateur</a></h1>
+		</nav>
+		<article>
+				{% block body %}{% endblock %}		
+		</article>
+		<footer>
+			<h2>Je suis le boss !</h2>
+		</footer>
+       
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,17 @@
+{% extends '::layout.html.twig' %}
+
+{% block body -%}
+    <h1>Edition des articles</h1>
+	<div class="fer w60">
+
+		{{ form(edit_form) }}
+
+        <ul class="record_actions">
+			<li>
+				<a href="{{ path('article') }}">
+				</a>
+			 </li>
+			<li>{{ form(delete_form) }}</li>
+		</ul>
+	</div>
+{% endblock %}

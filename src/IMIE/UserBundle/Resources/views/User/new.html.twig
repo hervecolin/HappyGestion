@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Création des utilisateur</h1>
+	<div class="fer  w60">
+		{{ form(form) }}
+			<ul class="record_actions">
+				<li>
+				<a href="{{ path('user') }}">
+					Retour à la liste
+				</a>
+			</li>
+	</ul>
+</div>
+{% endblock %}
